@@ -32,7 +32,8 @@ namespace PEPRN231_SU24TrialTest_NguyenVanNhat_BE.Service.Implement
             {
                 throw new Exception(ex.Message);
             }
-        }
+        }  
+
 
         public async Task<WatercolorsPainting?> Get(string key)
         {

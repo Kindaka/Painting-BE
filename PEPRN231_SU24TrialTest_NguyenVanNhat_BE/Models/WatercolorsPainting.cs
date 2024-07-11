@@ -13,8 +13,10 @@ namespace PEPRN231_SU24TrialTest_NguyenVanNhat_BE.Models
         public string PaintingName { get; set; } = null!;
         public string? PaintingDescription { get; set; }
         public string? PaintingAuthor { get; set; }
+
         [Range(0, double.MaxValue, ErrorMessage = "Price must be greater than or equal to 0.")]
         public decimal? Price { get; set; }
+
         [Range(1000, int.MaxValue, ErrorMessage = "PublishYear must be greater than or equal to 1000.")]
         public int? PublishYear { get; set; }
         public DateTime? CreatedDate { get; set; }

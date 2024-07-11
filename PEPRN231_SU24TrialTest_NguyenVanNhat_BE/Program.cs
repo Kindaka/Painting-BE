@@ -92,6 +92,7 @@ builder.Services.AddDbContext<WatercolorsPainting2024DBContext>(options => optio
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IWatercolorsPaintingService, WatercolorsPaintingService>();
+builder.Services.AddScoped<IStyleService, StyleService>();
 
 builder.Services.AddAutoMapper(typeof(Program), typeof(MappingProfile));
 

@@ -31,7 +31,9 @@ namespace PEPRN231_SU24TrialTest_NguyenVanNhat_BE.Controllers
             {
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
-        }
+        }  
+        
+        
 
         [Authorize(Policy = "RequireStaffOrManagerRole")]
         [EnableQuery]
