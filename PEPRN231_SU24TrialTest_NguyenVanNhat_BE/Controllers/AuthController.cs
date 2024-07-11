@@ -37,7 +37,7 @@ namespace PEPRN231_SU24TrialTest_NguyenVanNhat_BE.Controllers
                 if (customer != null)
                 {
                     var accessToken = await _authService.GenerateAccessToken(customer.UserEmail, customer.Role);
-                    response = Ok(new { accessToken = accessToken });
+                    response = Ok(new { accessToken = accessToken,role=customer.Role,fullname=customer.UserFullName });
                     return response;
                 }
                 return NotFound("Invalid email or password");
