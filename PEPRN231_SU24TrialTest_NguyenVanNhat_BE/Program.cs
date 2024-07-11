@@ -95,6 +95,16 @@ builder.Services.AddScoped<IWatercolorsPaintingService, WatercolorsPaintingServi
 
 builder.Services.AddAutoMapper(typeof(Program), typeof(MappingProfile));
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -113,5 +123,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.Run();
